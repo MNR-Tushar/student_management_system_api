@@ -1,0 +1,191 @@
+[
+  {
+    "model": "api.Department",
+    "pk": 1,
+    "fields": {
+      "name": "Computer Science & Engineering",
+      "code": "CSE",
+      "description": "Department of Computer Science & Engineering."
+    }
+  },
+  {
+    "model": "api.Department",
+    "pk": 2,
+    "fields": {
+      "name": "Electrical & Electronic Engineering",
+      "code": "EEE",
+      "description": "Department of Electrical & Electronic Engineering."
+    }
+  },
+  {
+    "model": "api.Department",
+    "pk": 3,
+    "fields": {
+      "name": "Business Administration",
+      "code": "BBA",
+      "description": "Department of Business Administration."
+    }
+  },
+
+
+  {
+    "model": "api.Students",
+    "pk": 1,
+    "fields": {
+      "name": "Md Rahim",
+      "student_id": "STD2025001",
+      "email": "rahim@example.com",
+      "phone": "01711000001",
+      "address": "Dhaka, Bangladesh",
+      "gender": "male",
+      "dob": "2003-05-11",
+      "admission_date": "2021-01-10",
+      "created_at": "2024-11-01T10:00:00Z",
+      "updated_at": "2024-11-01T10:00:00Z",
+      "department": 1
+    }
+  },
+  {
+    "model": "api.Students",
+    "pk": 2,
+    "fields": {
+      "name": "Fatema Akter",
+      "student_id": "STD2025002",
+      "email": "fatema@example.com",
+      "phone": "01711000002",
+      "address": "Chittagong, Bangladesh",
+      "gender": "female",
+      "dob": "2004-03-21",
+      "admission_date": "2021-01-12",
+      "created_at": "2024-11-01T10:05:00Z",
+      "updated_at": "2024-11-01T10:05:00Z",
+      "department": 2
+    }
+  },
+  {
+    "model": "api.Students",
+    "pk": 3,
+    "fields": {
+      "name": "Sajjad Hossain",
+      "student_id": "STD2025003",
+      "email": "sajjad@example.com",
+      "phone": "01711000003",
+      "address": "Rajshahi, Bangladesh",
+      "gender": "male",
+      "dob": "2002-12-01",
+      "admission_date": "2021-01-15",
+      "created_at": "2024-11-01T10:10:00Z",
+      "updated_at": "2024-11-01T10:10:00Z",
+      "department": 1
+    }
+  },
+
+
+  {
+    "model": "api.Teachers",
+    "pk": 1,
+    "fields": {
+      "name": "Dr. Ahsan Habib",
+      "teacher_id": "TCH1001",
+      "designation": "Professor",
+      "email": "ahsan@example.com",
+      "phone": "01822000001",
+      "address": "Dhaka",
+      "created_at": "2024-11-01T11:00:00Z",
+      "updated_at": "2024-11-01T11:00:00Z",
+      "department": 1
+    }
+  },
+  {
+    "model": "api.Teachers",
+    "pk": 2,
+    "fields": {
+      "name": "Dr. Nasima Khatun",
+      "teacher_id": "TCH1002",
+      "designation": "Associate Professor",
+      "email": "nasima@example.com",
+      "phone": "01822000002",
+      "address": "Dhaka",
+      "created_at": "2024-11-01T11:10:00Z",
+      "updated_at": "2024-11-01T11:10:00Z",
+      "department": 2
+    }
+  },
+
+
+  {
+    "model": "api.Courses",
+    "pk": 1,
+    "fields": {
+      "title": "Introduction to Programming",
+      "code": "CSE101",
+      "credit": "3.00",
+      "semester": 1,
+      "department": 1,
+      "created_at": "2024-11-02T12:00:00Z",
+      "updated_at": "2024-11-02T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.Courses",
+    "pk": 2,
+    "fields": {
+      "title": "Data Structures",
+      "code": "CSE205",
+      "credit": "3.00",
+      "semester": 2,
+      "department": 1,
+      "created_at": "2024-11-02T12:10:00Z",
+      "updated_at": "2024-11-02T12:10:00Z"
+    }
+  },
+  {
+    "model": "api.Courses",
+    "pk": 3,
+    "fields": {
+      "title": "Electrical Circuits",
+      "code": "EEE110",
+      "credit": "3.00",
+      "semester": 1,
+      "department": 2,
+      "created_at": "2024-11-02T12:20:00Z",
+      "updated_at": "2024-11-02T12:20:00Z"
+    }
+  },
+
+
+
+  {
+    "model": "api.enrollments",
+    "pk": 1,
+    "fields": {
+      "student_id": 1,
+      "course_id": 1,
+      "enrollment_date": "2024-11-05",
+      "created_at": "2024-11-05T09:00:00Z",
+      "updated_at": "2024-11-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "api.enrollments",
+    "pk": 2,
+    "fields": {
+      "student_id": 2,
+      "course_id": 3,
+      "enrollment_date": "2024-11-06",
+      "created_at": "2024-11-06T09:10:00Z",
+      "updated_at": "2024-11-06T09:10:00Z"
+    }
+  },
+  {
+    "model": "api.enrollments",
+    "pk": 3,
+    "fields": {
+      "student_id": 3,
+      "course_id": 2,
+      "enrollment_date": "2024-11-07",
+      "created_at": "2024-11-07T09:20:00Z",
+      "updated_at": "2024-11-07T09:20:00Z"
+    }
+  }
+]
