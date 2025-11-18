@@ -4,25 +4,25 @@ from .models import *
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        models =Department
+        model =Department
         fields = '__all__'
 
 class StudentsSerializer(serializers.ModelSerializer):
     class Meta:
-        models =Students
+        model =Students
         fields = '__all__'
 
 class TeachersSerializer(serializers.ModelSerializer):
     class Meta:
-        models =Teachers
+        model =Teachers
         fields = '__all__'
 
 class CoursesSerializer(serializers.ModelSerializer):
     class Meta:
-        models =Courses
+        model =Courses
         fields = '__all__'
 
 class enrollmentsSerializer(serializers.ModelSerializer):
     class Meta:
-        models =enrollments
+        model =enrollments
         fields = '__all__'
