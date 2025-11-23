@@ -148,8 +148,8 @@ class CoursesViewset(viewsets.ModelViewSet):
 
 
 class EnrollmentsViewset(viewsets.ModelViewSet):
-    queryset = enrollments.objects.all()
-    serializer_class = enrollmentsSerializer
+    #queryset = Enrollments.objects.all()
+    serializer_class = EnrollmentsSerializer
 
     def list(self,request):
         enrollments=self.get_queryset()

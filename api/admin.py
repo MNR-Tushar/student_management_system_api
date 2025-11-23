@@ -19,7 +19,7 @@ class CoursesAdmin(admin.ModelAdmin):
     list_display = ('title', 'code', 'credit', 'semester', 'department')
     search_fields = ('title', 'code', 'credit', 'semester', 'department')
 
-@admin.register(enrollments)
+@admin.register(Enrollments)
 class enrollmentsAdmin(admin.ModelAdmin):
     list_display = ('student_id', 'course_id', 'enrollment_date')
     search_fields = ('student_id', 'course_id', 'enrollment_date')

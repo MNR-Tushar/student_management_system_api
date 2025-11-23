@@ -54,7 +54,7 @@ class Courses(models.Model):
     def __str__(self):
         return self.title
 
-class enrollments(models.Model):
+class Enrollments(models.Model):
     student_id=models.ForeignKey(Students,on_delete=models.CASCADE,null=True,blank=True)
     course_id=models.ForeignKey(Courses,on_delete=models.CASCADE,null=True,blank=True)
     enrollment_date=models.DateField(null=True,blank=True)
