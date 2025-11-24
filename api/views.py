@@ -7,6 +7,7 @@ from rest_framework.pagination import LimitOffsetPagination
 class DepartmentViewset(viewsets.GenericViewSet):
     queryset=Department.objects.all()
     serializer_class=DepartmentSerializer
+    pagination_class = LimitOffsetPagination
     def list(self, request):
         departments=self.get_queryset()
         page = self.paginate_queryset(departments)
@@ -82,6 +83,7 @@ class StudentsViewset(viewsets.ModelViewSet):
 class TeachersViewset(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeachersSerializer
+    pagination_class = LimitOffsetPagination
 
     def list(self,request):
         teacher=self.get_queryset()
@@ -116,6 +118,7 @@ class TeachersViewset(viewsets.ModelViewSet):
 class CoursesViewset(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CoursesSerializer
+    pagination_class = LimitOffsetPagination
 
     def list(self,request):
         course=self.get_queryset()
@@ -156,6 +159,7 @@ class CoursesViewset(viewsets.ModelViewSet):
 class EnrollmentsViewset(viewsets.ModelViewSet):
     queryset = Enrollment.objects.all()
     serializer_class = EnrollmentsSerializer
+    pagination_class = LimitOffsetPagination
 
     def list(self,request):
         enrollments=self.get_queryset()
