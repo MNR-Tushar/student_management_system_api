@@ -4,6 +4,9 @@ from .serializers import *
 from .models import *
 from rest_framework.response import Response
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
+
 class DepartmentViewset(viewsets.GenericViewSet):
     queryset=Department.objects.all()
     serializer_class=DepartmentSerializer
@@ -160,11 +163,18 @@ class EnrollmentsViewset(viewsets.ModelViewSet):
     queryset = Enrollment.objects.all()
     serializer_class = EnrollmentsSerializer
     pagination_class = LimitOffsetPagination
+    filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
+    search_fields=['student__id','course__id','enrollment_date']
+
 
     def list(self,request):
         enrollments=self.get_queryset()
-        page=self.paginate_queryset(enrollments)
-        serializer=self.get_serializer(page,many=True)
+        filter_queryset=self.filter_queryset(enrollments)
+        page=self.paginate_queryset(filter_queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer=self.get_serializer(filter_queryset,many=True)
         return self.get_paginated_response(serializer.data)
     
     def create(self,request):
