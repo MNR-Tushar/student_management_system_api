@@ -9,17 +9,17 @@ class DepartmentSerializer(serializers.ModelSerializer):
 
 class StudentsSerializer(serializers.ModelSerializer):
     class Meta:
-        model =Students
+        model =Student
         fields = '__all__'
 
 class TeachersSerializer(serializers.ModelSerializer):
     class Meta:
-        model =Teachers
+        model =Teacher
         fields = '__all__'
 
 class CoursesSerializer(serializers.ModelSerializer):
     class Meta:
-        model =Courses
+        model =Course
         fields = '__all__'
 
 class EnrollmentsSerializer(serializers.ModelSerializer):
@@ -31,7 +31,7 @@ class EnrollmentsSerializer(serializers.ModelSerializer):
     course=CoursesSerializer(read_only=True)
 
     class Meta:
-        model =Enrollments
+        model =Enrollment
         fields='__all__'
         
     #     fields = ['id','course_name','student_name','enrollment_date','created_at','updated_at','student','course']

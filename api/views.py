@@ -3,13 +3,15 @@ from rest_framework import viewsets
 from .serializers import *
 from .models import *
 from rest_framework.response import Response
+from rest_framework.pagination import LimitOffsetPagination
 class DepartmentViewset(viewsets.GenericViewSet):
     queryset=Department.objects.all()
     serializer_class=DepartmentSerializer
     def list(self, request):
         departments=self.get_queryset()
-        serializer=self.get_serializer(departments,many=True)
-        return Response(serializer.data)
+        page = self.paginate_queryset(departments)
+        serializer=self.get_serializer(page,many=True)
+        return self.get_paginated_response(serializer.data)
     
     def create(self, request):
         serializer=self.get_serializer(data=request.data)
@@ -42,13 +44,15 @@ class DepartmentViewset(viewsets.GenericViewSet):
         return Response(serializer.data)
 
 class StudentsViewset(viewsets.ModelViewSet):
-    queryset = Students.objects.all()
+    queryset = Student.objects.all()
     serializer_class = StudentsSerializer
+    pagination_class = LimitOffsetPagination
 
     def list(self,request):
         student=self.get_queryset()
-        serializer=self.get_serializer(student,many=True)
-        return Response(serializer.data)
+        page=self.paginate_queryset(student)
+        serializer=self.get_serializer(page,many=True)
+        return self.get_paginated_response(serializer.data)
     
     def create(self,request):
         serializer=self.get_serializer(data=request.data)
@@ -63,7 +67,7 @@ class StudentsViewset(viewsets.ModelViewSet):
         serializer.save()
         return Response(serializer.data)
     
-    def destory(self,request,pk=None):
+    def destroy(self,request,pk=None):
         student=self.get_object()
         student.delete()
         return Response(status=204)
@@ -76,13 +80,14 @@ class StudentsViewset(viewsets.ModelViewSet):
         
 
 class TeachersViewset(viewsets.ModelViewSet):
-    queryset = Teachers.objects.all()
+    queryset = Teacher.objects.all()
     serializer_class = TeachersSerializer
 
     def list(self,request):
         teacher=self.get_queryset()
-        serializer=self.get_serializer(teacher,many=True)
-        return Response(serializer.data)
+        page=self.paginate_queryset(teacher)
+        serializer=self.get_serializer(page,many=True)
+        return self.get_paginated_response(serializer.data)
     
     def create(self,request):
         serializer=self.get_serializer(data=request.data)
@@ -97,7 +102,7 @@ class TeachersViewset(viewsets.ModelViewSet):
         serializer.save()
         return Response(serializer.data)
     
-    def destory(self,request,pk=None):
+    def destroy(self,request,pk=None):
         teacher=self.get_object()
         teacher.delete()
         return Respone(status=2024)
@@ -109,13 +114,14 @@ class TeachersViewset(viewsets.ModelViewSet):
         
 
 class CoursesViewset(viewsets.ModelViewSet):
-    queryset = Courses.objects.all()
+    queryset = Course.objects.all()
     serializer_class = CoursesSerializer
 
     def list(self,request):
         course=self.get_queryset()
-        serializer=self.get_serializer(course,many=True)
-        return Response(serializer.data)
+        page=self.paginate_queryset(course)
+        serializer=self.get_serializer(page,many=True)
+        return self.get_paginated_response(serializer.data)
     
     def create(self,request):
         serializer=self.get_serializer(data=request.data)
@@ -136,7 +142,7 @@ class CoursesViewset(viewsets.ModelViewSet):
         serializer.save()
         return Response(serializer.data)
     
-    def destory(self,request,pk=None):
+    def destroy(self,request,pk=None):
         course=self.get_object()
         course.detele()
         return Response(status=204)
@@ -148,13 +154,14 @@ class CoursesViewset(viewsets.ModelViewSet):
 
 
 class EnrollmentsViewset(viewsets.ModelViewSet):
-    #queryset = Enrollments.objects.all()
+    queryset = Enrollment.objects.all()
     serializer_class = EnrollmentsSerializer
 
     def list(self,request):
         enrollments=self.get_queryset()
-        serializer=self.get_serializer(enrollments,many=True)
-        return Response(serializer.data)
+        page=self.paginate_queryset(enrollments)
+        serializer=self.get_serializer(page,many=True)
+        return self.get_paginated_response(serializer.data)
     
     def create(self,request):
         serializer=self.get_serializer(data=request.data)
@@ -169,7 +176,7 @@ class EnrollmentsViewset(viewsets.ModelViewSet):
         serializer.save()
         return Response(serializer.data)
     
-    def destory(self,request,pk=None):
+    def destroy(self,request,pk=None):
         enrollments=self.get_object()
         enrollments.delete()
         return Response(status=204)
