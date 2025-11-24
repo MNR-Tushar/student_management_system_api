@@ -1,191 +1,712 @@
 [
   {
-    "model": "api.Department",
+    "model": "api.department",
     "pk": 1,
     "fields": {
       "name": "Computer Science & Engineering",
       "code": "CSE",
-      "description": "Department of Computer Science & Engineering."
+      "description": "Department of CSE"
     }
   },
   {
-    "model": "api.Department",
+    "model": "api.department",
     "pk": 2,
     "fields": {
       "name": "Electrical & Electronic Engineering",
       "code": "EEE",
-      "description": "Department of Electrical & Electronic Engineering."
+      "description": "Department of EEE"
     }
   },
   {
-    "model": "api.Department",
+    "model": "api.department",
     "pk": 3,
     "fields": {
       "name": "Business Administration",
       "code": "BBA",
-      "description": "Department of Business Administration."
+      "description": "Department of BBA"
     }
   },
 
-
   {
-    "model": "api.Students",
+    "model": "api.student",
     "pk": 1,
     "fields": {
       "name": "Md Rahim",
       "student_id": "STD2025001",
       "email": "rahim@example.com",
-      "phone": "01711000001",
-      "address": "Dhaka, Bangladesh",
+      "phone": "01710000001",
+      "address": "Dhaka",
       "gender": "male",
       "dob": "2003-05-11",
       "admission_date": "2021-01-10",
-      "created_at": "2024-11-01T10:00:00Z",
-      "updated_at": "2024-11-01T10:00:00Z",
       "department": 1
     }
   },
   {
-    "model": "api.Students",
+    "model": "api.student",
     "pk": 2,
     "fields": {
       "name": "Fatema Akter",
       "student_id": "STD2025002",
       "email": "fatema@example.com",
-      "phone": "01711000002",
-      "address": "Chittagong, Bangladesh",
+      "phone": "01710000002",
+      "address": "Chittagong",
       "gender": "female",
       "dob": "2004-03-21",
       "admission_date": "2021-01-12",
-      "created_at": "2024-11-01T10:05:00Z",
-      "updated_at": "2024-11-01T10:05:00Z",
       "department": 2
     }
   },
   {
-    "model": "api.Students",
+    "model": "api.student",
     "pk": 3,
     "fields": {
       "name": "Sajjad Hossain",
       "student_id": "STD2025003",
       "email": "sajjad@example.com",
-      "phone": "01711000003",
-      "address": "Rajshahi, Bangladesh",
+      "phone": "01710000003",
+      "address": "Rajshahi",
       "gender": "male",
       "dob": "2002-12-01",
       "admission_date": "2021-01-15",
-      "created_at": "2024-11-01T10:10:00Z",
-      "updated_at": "2024-11-01T10:10:00Z",
       "department": 1
     }
   },
-
+  {
+    "model": "api.student",
+    "pk": 4,
+    "fields": {
+      "name": "Nusrat Jahan",
+      "student_id": "STD2025004",
+      "email": "nusrat@example.com",
+      "phone": "01710000004",
+      "address": "Sylhet",
+      "gender": "female",
+      "dob": "2004-07-10",
+      "admission_date": "2021-02-01",
+      "department": 3
+    }
+  },
+  {
+    "model": "api.student",
+    "pk": 5,
+    "fields": {
+      "name": "Tanvir Hasan",
+      "student_id": "STD2025005",
+      "email": "tanvir@example.com",
+      "phone": "01710000005",
+      "address": "Barishal",
+      "gender": "male",
+      "dob": "2003-11-20",
+      "admission_date": "2021-02-12",
+      "department": 2
+    }
+  },
 
   {
-    "model": "api.Teachers",
+    "model": "api.teacher",
     "pk": 1,
     "fields": {
       "name": "Dr. Ahsan Habib",
       "teacher_id": "TCH1001",
       "designation": "Professor",
       "email": "ahsan@example.com",
-      "phone": "01822000001",
+      "phone": "01820000001",
       "address": "Dhaka",
-      "created_at": "2024-11-01T11:00:00Z",
-      "updated_at": "2024-11-01T11:00:00Z",
       "department": 1
     }
   },
   {
-    "model": "api.Teachers",
+    "model": "api.teacher",
     "pk": 2,
     "fields": {
       "name": "Dr. Nasima Khatun",
       "teacher_id": "TCH1002",
       "designation": "Associate Professor",
       "email": "nasima@example.com",
-      "phone": "01822000002",
+      "phone": "01820000002",
       "address": "Dhaka",
-      "created_at": "2024-11-01T11:10:00Z",
-      "updated_at": "2024-11-01T11:10:00Z",
       "department": 2
     }
   },
-
+  {
+    "model": "api.teacher",
+    "pk": 3,
+    "fields": {
+      "name": "Mahmudul Hassan",
+      "teacher_id": "TCH1003",
+      "designation": "Senior Lecturer",
+      "email": "mahmud@example.com",
+      "phone": "01820000003",
+      "address": "Chittagong",
+      "department": 1
+    }
+  },
+  {
+    "model": "api.teacher",
+    "pk": 4,
+    "fields": {
+      "name": "Rumana Islam",
+      "teacher_id": "TCH1004",
+      "designation": "Lecturer",
+      "email": "rumana@example.com",
+      "phone": "01820000004",
+      "address": "Rajshahi",
+      "department": 3
+    }
+  },
 
   {
-    "model": "api.Courses",
+    "model": "api.course",
     "pk": 1,
     "fields": {
       "title": "Introduction to Programming",
       "code": "CSE101",
       "credit": "3.00",
       "semester": 1,
-      "department": 1,
-      "created_at": "2024-11-02T12:00:00Z",
-      "updated_at": "2024-11-02T12:00:00Z"
+      "department": 1
     }
   },
   {
-    "model": "api.Courses",
+    "model": "api.course",
     "pk": 2,
     "fields": {
       "title": "Data Structures",
       "code": "CSE205",
       "credit": "3.00",
       "semester": 2,
-      "department": 1,
-      "created_at": "2024-11-02T12:10:00Z",
-      "updated_at": "2024-11-02T12:10:00Z"
+      "department": 1
     }
   },
   {
-    "model": "api.Courses",
+    "model": "api.course",
     "pk": 3,
     "fields": {
       "title": "Electrical Circuits",
       "code": "EEE110",
       "credit": "3.00",
       "semester": 1,
-      "department": 2,
-      "created_at": "2024-11-02T12:20:00Z",
-      "updated_at": "2024-11-02T12:20:00Z"
+      "department": 2
+    }
+  },
+  {
+    "model": "api.course",
+    "pk": 4,
+    "fields": {
+      "title": "Marketing Basics",
+      "code": "BBA101",
+      "credit": "3.00",
+      "semester": 1,
+      "department": 3
+    }
+  },
+  {
+    "model": "api.course",
+    "pk": 5,
+    "fields": {
+      "title": "Database Management",
+      "code": "CSE310",
+      "credit": "3.00",
+      "semester": 3,
+      "department": 1
     }
   },
 
-
-
   {
-    "model": "api.enrollments",
+    "model": "api.enrollment",
     "pk": 1,
     "fields": {
-      "student_id": 1,
-      "course_id": 1,
-      "enrollment_date": "2024-11-05",
-      "created_at": "2024-11-05T09:00:00Z",
-      "updated_at": "2024-11-05T09:00:00Z"
+      "student": 1,
+      "course": 1,
+      "enrollment_date": "2024-11-05"
     }
   },
   {
-    "model": "api.enrollments",
+    "model": "api.enrollment",
     "pk": 2,
     "fields": {
-      "student_id": 2,
-      "course_id": 3,
-      "enrollment_date": "2024-11-06",
-      "created_at": "2024-11-06T09:10:00Z",
-      "updated_at": "2024-11-06T09:10:00Z"
+      "student": 2,
+      "course": 3,
+      "enrollment_date": "2024-11-06"
     }
   },
   {
-    "model": "api.enrollments",
+    "model": "api.enrollment",
     "pk": 3,
     "fields": {
-      "student_id": 3,
-      "course_id": 2,
-      "enrollment_date": "2024-11-07",
-      "created_at": "2024-11-07T09:20:00Z",
-      "updated_at": "2024-11-07T09:20:00Z"
+      "student": 3,
+      "course": 2,
+      "enrollment_date": "2024-11-07"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 4,
+    "fields": {
+      "student": 4,
+      "course": 4,
+      "enrollment_date": "2024-11-08"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 5,
+    "fields": {
+      "student": 5,
+      "course": 5,
+      "enrollment_date": "2024-11-09"
+    }
+  },
+  
+  {
+    "model": "api.enrollment",
+    "pk": 1,
+    "fields": {
+      "student": 1,
+      "course": 1,
+      "enrollment_date": "2024-11-05"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 2,
+    "fields": {
+      "student": 2,
+      "course": 3,
+      "enrollment_date": "2024-11-06"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 3,
+    "fields": {
+      "student": 3,
+      "course": 2,
+      "enrollment_date": "2024-11-07"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 4,
+    "fields": {
+      "student": 4,
+      "course": 4,
+      "enrollment_date": "2024-11-08"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 5,
+    "fields": {
+      "student": 5,
+      "course": 5,
+      "enrollment_date": "2024-11-09"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 6,
+    "fields": {
+      "student": 1,
+      "course": 2,
+      "enrollment_date": "2024-11-01"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 7,
+    "fields": {
+      "student": 3,
+      "course": 1,
+      "enrollment_date": "2024-11-02"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 8,
+    "fields": {
+      "student": 5,
+      "course": 3,
+      "enrollment_date": "2024-11-03"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 9,
+    "fields": {
+      "student": 2,
+      "course": 5,
+      "enrollment_date": "2024-11-04"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 10,
+    "fields": {
+      "student": 4,
+      "course": 1,
+      "enrollment_date": "2024-11-10"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 11,
+    "fields": {
+      "student": 1,
+      "course": 5,
+      "enrollment_date": "2024-11-11"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 12,
+    "fields": {
+      "student": 3,
+      "course": 3,
+      "enrollment_date": "2024-11-12"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 13,
+    "fields": {
+      "student": 5,
+      "course": 2,
+      "enrollment_date": "2024-11-13"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 14,
+    "fields": {
+      "student": 2,
+      "course": 1,
+      "enrollment_date": "2024-11-14"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 15,
+    "fields": {
+      "student": 4,
+      "course": 5,
+      "enrollment_date": "2024-11-15"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 16,
+    "fields": {
+      "student": 1,
+      "course": 3,
+      "enrollment_date": "2024-11-16"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 17,
+    "fields": {
+      "student": 3,
+      "course": 5,
+      "enrollment_date": "2024-11-17"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 18,
+    "fields": {
+      "student": 5,
+      "course": 4,
+      "enrollment_date": "2024-11-18"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 19,
+    "fields": {
+      "student": 2,
+      "course": 2,
+      "enrollment_date": "2024-11-19"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 20,
+    "fields": {
+      "student": 4,
+      "course": 3,
+      "enrollment_date": "2024-11-20"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 21,
+    "fields": {
+      "student": 1,
+      "course": 4,
+      "enrollment_date": "2024-11-01"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 22,
+    "fields": {
+      "student": 2,
+      "course": 1,
+      "enrollment_date": "2024-11-02"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 23,
+    "fields": {
+      "student": 3,
+      "course": 4,
+      "enrollment_date": "2024-11-03"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 24,
+    "fields": {
+      "student": 4,
+      "course": 2,
+      "enrollment_date": "2024-11-04"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 25,
+    "fields": {
+      "student": 5,
+      "course": 1,
+      "enrollment_date": "2024-11-05"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 26,
+    "fields": {
+      "student": 1,
+      "course": 1,
+      "enrollment_date": "2024-11-06"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 27,
+    "fields": {
+      "student": 2,
+      "course": 4,
+      "enrollment_date": "2024-11-07"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 28,
+    "fields": {
+      "student": 3,
+      "course": 3,
+      "enrollment_date": "2024-11-08"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 29,
+    "fields": {
+      "student": 4,
+      "course": 5,
+      "enrollment_date": "2024-11-09"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 30,
+    "fields": {
+      "student": 5,
+      "course": 2,
+      "enrollment_date": "2024-11-10"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 31,
+    "fields": {
+      "student": 1,
+      "course": 2,
+      "enrollment_date": "2024-11-11"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 32,
+    "fields": {
+      "student": 2,
+      "course": 5,
+      "enrollment_date": "2024-11-12"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 33,
+    "fields": {
+      "student": 3,
+      "course": 1,
+      "enrollment_date": "2024-11-13"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 34,
+    "fields": {
+      "student": 4,
+      "course": 4,
+      "enrollment_date": "2024-11-14"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 35,
+    "fields": {
+      "student": 5,
+      "course": 3,
+      "enrollment_date": "2024-11-15"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 36,
+    "fields": {
+      "student": 1,
+      "course": 5,
+      "enrollment_date": "2024-11-16"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 37,
+    "fields": {
+      "student": 2,
+      "course": 3,
+      "enrollment_date": "2024-11-17"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 38,
+    "fields": {
+      "student": 3,
+      "course": 2,
+      "enrollment_date": "2024-11-18"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 39,
+    "fields": {
+      "student": 4,
+      "course": 1,
+      "enrollment_date": "2024-11-19"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 40,
+    "fields": {
+      "student": 5,
+      "course": 4,
+      "enrollment_date": "2024-11-20"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 41,
+    "fields": {
+      "student": 1,
+      "course": 3,
+      "enrollment_date": "2024-11-02"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 42,
+    "fields": {
+      "student": 2,
+      "course": 2,
+      "enrollment_date": "2024-11-03"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 43,
+    "fields": {
+      "student": 3,
+      "course": 4,
+      "enrollment_date": "2024-11-04"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 44,
+    "fields": {
+      "student": 4,
+      "course": 5,
+      "enrollment_date": "2024-11-05"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 45,
+    "fields": {
+      "student": 5,
+      "course": 1,
+      "enrollment_date": "2024-11-06"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 46,
+    "fields": {
+      "student": 1,
+      "course": 4,
+      "enrollment_date": "2024-11-07"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 47,
+    "fields": {
+      "student": 2,
+      "course": 5,
+      "enrollment_date": "2024-11-08"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 48,
+    "fields": {
+      "student": 3,
+      "course": 3,
+      "enrollment_date": "2024-11-09"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 49,
+    "fields": {
+      "student": 4,
+      "course": 2,
+      "enrollment_date": "2024-11-10"
+    }
+  },
+  {
+    "model": "api.enrollment",
+    "pk": 50,
+    "fields": {
+      "student": 5,
+      "course": 1,
+      "enrollment_date": "2024-11-11"
     }
   }
+
 ]
