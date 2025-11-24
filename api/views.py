@@ -54,6 +54,10 @@ class StudentsViewset(viewsets.GenericViewSet):
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
     search_fields=['name','student_id','email','phone','address','gender','dob','admission_date']
     ordering_fields=['name']
+    filterset_fields = {
+        'department': ['exact','in'],
+        'gender': ['exact'],
+    }
 
     def list(self,request):
         student=self.get_queryset()
@@ -174,7 +178,10 @@ class EnrollmentsViewset(viewsets.GenericViewSet):
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
     search_fields=['student__id','course__id','enrollment_date']
     ordering_fields=['enrollment_date','student__id','course__id']
-
+    filterset_fields = {
+        'student': ['exact','in'],
+        'course__title': ['exact'],
+    }
 
     def list(self,request):
         enrollments=self.get_queryset()
