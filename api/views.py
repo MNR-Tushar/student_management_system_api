@@ -134,12 +134,23 @@ class CoursesViewset(viewsets.GenericViewSet):
     queryset = Course.objects.all()
     serializer_class = CoursesSerializer
     pagination_class = LimitOffsetPagination
+    filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
+    search_fields=['title','code','credit','semester','department__name']
+    ordering_fields=['title','code']
+    filterset_fields = {
+        'department__name': ['exact'],
+        'semester': ['exact'],
+    }
 
     def list(self,request):
         course=self.get_queryset()
-        page=self.paginate_queryset(course)
-        serializer=self.get_serializer(page,many=True)
-        return self.get_paginated_response(serializer.data)
+        filter_queryset=self.filter_queryset(course)
+        page=self.paginate_queryset(filter_queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer=self.get_serializer(filter_queryset,many=True)
+        return Response(serializer.data)
     
     def create(self,request):
         serializer=self.get_serializer(data=request.data)
