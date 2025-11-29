@@ -52,10 +52,11 @@ class StudentsViewset(viewsets.GenericViewSet):
     serializer_class = StudentsSerializer
     pagination_class = LimitOffsetPagination
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
-    search_fields=['name','student_id','email','phone','address','gender','dob','admission_date']
+    search_fields=['name','student_id','email','phone','address','gender','dob','admission_date','department__name']
     ordering_fields=['name']
     filterset_fields = {
         'department': ['exact','in'],
+        'department__name': ['exact'],
         'gender': ['exact'],
     }
 
