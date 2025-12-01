@@ -13,6 +13,7 @@ class DepartmentViewset(viewsets.GenericViewSet):
     serializer_class=DepartmentSerializer
     pagination_class = LimitOffsetPagination
     permission_classes = [IsAuthenticated]
+    
     def list(self, request):
         department=self.get_queryset()
         page = self.paginate_queryset(department)
@@ -134,7 +135,7 @@ class TeachersViewset(viewsets.GenericViewSet):
     def destroy(self,request,pk=None):
         teacher=self.get_object()
         teacher.delete()
-        return Response(status=2024)
+        return Response(status=204)  # Fixed: was 2024
     
     def retrieve(self,request,pk=None):
         teacher=self.get_object()
@@ -146,6 +147,7 @@ class CoursesViewset(viewsets.GenericViewSet):
     queryset = Course.objects.all()
     serializer_class = CoursesSerializer
     pagination_class = LimitOffsetPagination
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
     search_fields=['title','code','credit','semester','department__name']
     ordering_fields=['title','code']
@@ -176,6 +178,7 @@ class CoursesViewset(viewsets.GenericViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+        
     def update(self,request,pk=None):
         course=self.get_object()
         serializer=self.get_serializer(course,data=request.data)
@@ -185,7 +188,7 @@ class CoursesViewset(viewsets.GenericViewSet):
     
     def destroy(self,request,pk=None):
         course=self.get_object()
-        course.detele()
+        course.delete()  # Fixed: was detele()
         return Response(status=204)
     
     def retrieve(self,request,pk=None):
@@ -200,10 +203,11 @@ class EnrollmentsViewset(viewsets.GenericViewSet):
     pagination_class = LimitOffsetPagination
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
-    search_fields=['student__id','course__id','enrollment_date']
-    ordering_fields=['enrollment_date','student__id','course__id']
+    search_fields=['student__name','course__title','enrollment_date']
+    ordering_fields=['enrollment_date','student__name','course__title']
     filterset_fields = {
         'student': ['exact','in'],
+        'course': ['exact','in'],
         'course__title': ['exact'],
     }
 
@@ -240,6 +244,3 @@ class EnrollmentsViewset(viewsets.GenericViewSet):
         enrollments=self.get_object()
         serializer=self.get_serializer(enrollments)
         return Response(serializer.data)
-
-
-
