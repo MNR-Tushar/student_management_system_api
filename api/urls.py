@@ -19,7 +19,7 @@ router.register(r'enrollments', EnrollmentsViewset, basename='enrollment')
 
 urlpatterns = [
     path("", include(router.urls)),
-    path('api/token/', TokenObtainSlidingView.as_view(), name='token_obtain'),
-    path('api/token/refresh/', TokenRefreshSlidingView.as_view(), name='token_refresh'),
+    path('token/', TokenObtainSlidingView.as_view(), name='token_obtain'),
+    path('token/refresh/', TokenRefreshSlidingView.as_view(), name='token_refresh'),
   
 ]
