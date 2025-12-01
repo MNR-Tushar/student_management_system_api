@@ -1,14 +1,10 @@
-from django.db import router
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from .models import *
-from .serializers import *
 from .views import *
 from rest_framework_simplejwt.views import (
-    TokenObtainSlidingView,
-    TokenRefreshSlidingView,
+    TokenObtainPairView,
+    TokenRefreshView,
 )
-
 
 router = DefaultRouter()
 router.register(r'students', StudentsViewset, basename='student')
@@ -19,7 +15,6 @@ router.register(r'enrollments', EnrollmentsViewset, basename='enrollment')
 
 urlpatterns = [
     path("", include(router.urls)),
-    path('token/', TokenObtainSlidingView.as_view(), name='token_obtain'),
-    path('token/refresh/', TokenRefreshSlidingView.as_view(), name='token_refresh'),
-  
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
