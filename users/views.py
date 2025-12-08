@@ -2,10 +2,11 @@ from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from . import serializers
+from .serializers import *
 
 User = get_user_model()
 
@@ -15,7 +16,7 @@ class UserRegisterationAPIView(GenericAPIView):
     """
 
     permission_classes = (AllowAny,)
-    serializer_class = serializers.UserRegisterationSerializer
+    serializer_class =UserRegisterationSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -32,7 +33,7 @@ class UserLoginAPIView(GenericAPIView):
     """
 
     permission_classes = (AllowAny,)
-    serializer_class = serializers.UserLoginSerializer
+    serializer_class = UserLoginSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -60,13 +61,14 @@ class UserLogoutAPIView(GenericAPIView):
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
         
-class UserAPIView(RetrieveUpdateAPIView):
-    """
-    Get, Update user information
-    """
+class Userviewset(viewsets.ModelViewSet):
+    
 
     permission_classes = (IsAuthenticated,)
-    serializer_class = serializers.CustomUserSerializer
+    serializer_class = CustomUserSerializer
+    queryset = User.objects.all()
 
-    def get_object(self):
-        return self.request.user
+    # def list(self, request):
+    #     queryset = User.objects.all()
+    #     serializer = CustomUserSerializer(queryset, many=True)
+    #     return Response(serializer.data)
