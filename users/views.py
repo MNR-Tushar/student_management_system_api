@@ -3,6 +3,8 @@ from rest_framework import status
 from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import viewsets
+from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -34,6 +36,7 @@ class UserLoginAPIView(GenericAPIView):
 
     permission_classes = (AllowAny,)
     serializer_class = UserLoginSerializer
+    
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -67,8 +70,7 @@ class Userviewset(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     serializer_class = CustomUserSerializer
     queryset = User.objects.all()
-
-    # def list(self, request):
-    #     queryset = User.objects.all()
-    #     serializer = CustomUserSerializer(queryset, many=True)
-    #     return Response(serializer.data)
+    filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
+    search_fields=['email','username']
+    ordering_fields=['email','username']
+    
