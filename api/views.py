@@ -13,15 +13,26 @@ class DepartmentViewset(viewsets.GenericViewSet):
     serializer_class=DepartmentSerializer
     pagination_class = LimitOffsetPagination
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
+    search_fields=['name','code']
+    ordering_fields=['name','code']
+    
+    filterset_fields = {
+        'name': ['exact','in'],
+        'code': ['exact'],
+    }
+    
+    
     
     def list(self, request):
         department=self.get_queryset()
-        page = self.paginate_queryset(department)
+        filter_queryset=self.filter_queryset(department)
+        page = self.paginate_queryset(filter_queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
         
-        serializer=self.get_serializer(department,many=True)
+        serializer=self.get_serializer(filter_queryset,many=True)
         return Response(serializer.data)
     
     def create(self, request):
