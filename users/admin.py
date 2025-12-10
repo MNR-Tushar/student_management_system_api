@@ -16,10 +16,16 @@ class CustomUserAdmin(UserAdmin):
     list_display = (
         "username",
         "email",
+        "phone",
+        "first_name",
+        "last_name",
+        "address",
+    
         "is_active",
         "is_staff",
         "is_superuser",
         "last_login",
+        
     )
     list_filter = ("is_active", "is_staff", "is_superuser")
     fieldsets = (
@@ -54,5 +60,5 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
     )
-    search_fields = ("email",)
+    search_fields = ("email","phone","username")
     ordering = ("email",)
