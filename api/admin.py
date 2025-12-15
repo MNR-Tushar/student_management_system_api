@@ -1,9 +1,6 @@
 from django.contrib import admin
 from .models import *
-@admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'code', 'description')
-    search_fields = ('name', 'code', 'description')
+
 @admin.register(Student)
 class StudentsAdmin(admin.ModelAdmin):
     list_display = ('name', 'student_id', 'email', 'phone', 'address', 'gender', 'dob', 'admission_date', 'department')

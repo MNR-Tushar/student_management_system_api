@@ -32,6 +32,11 @@ INSTALLED_APPS = [
     'django_filters',
     'api',
     'users',
+    'teachers',
+    'courses',
+    'results',
+    'attendance',
+    'departments',
 ]
 
 MIDDLEWARE = [
