@@ -11,10 +11,6 @@ class TeachersAdmin(admin.ModelAdmin):
     list_display = ('name', 'teacher_id', 'designation', 'email', 'phone', 'address', 'department')
     search_fields = ('name', 'teacher_id', 'designation', 'email', 'phone', 'address', 'department')
 
-@admin.register(Course)
-class CoursesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'code', 'credit', 'semester', 'department')
-    search_fields = ('title', 'code', 'credit', 'semester', 'department')
 
 @admin.register(Enrollment)
 class enrollmentsAdmin(admin.ModelAdmin):

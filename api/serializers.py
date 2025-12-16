@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import *
+from courses.serializers import CoursesSerializer
 
 class StudentsSerializer(serializers.ModelSerializer):
     department_name=serializers.ReadOnlyField(source='department.name',read_only=True)
@@ -13,11 +14,7 @@ class TeachersSerializer(serializers.ModelSerializer):
         model = Teacher
         fields = ['id','name','teacher_id','designation','email','phone','address','department','department_name']
 
-class CoursesSerializer(serializers.ModelSerializer):
-    department_name=serializers.ReadOnlyField(source='department.name')
-    class Meta:
-        model = Course
-        fields = ['id','title','code','credit','semester','department','department_name']
+
 
 class EnrollmentsSerializer(serializers.ModelSerializer):
     student_name=serializers.CharField(write_only=True,required=False)
