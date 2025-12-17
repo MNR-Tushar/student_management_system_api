@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import (
 
 router = DefaultRouter()
 router.register(r'students', StudentsViewset, basename='student')
-router.register(r'enrollments', EnrollmentsViewset, basename='enrollment')
+
 
 urlpatterns = [
     path("", include(router.urls)),
