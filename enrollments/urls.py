@@ -4,9 +4,9 @@ from .views import *
 
 
 router = DefaultRouter()
-router.register(r'teachers', TeachersViewset, basename='teacher')
-
+router.register(r'enrollments', EnrollmentsViewset, basename='enrollment')
 
 urlpatterns = [
     path("", include(router.urls)),
-] 
+   
+]
