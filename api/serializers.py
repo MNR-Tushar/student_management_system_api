@@ -8,11 +8,7 @@ class StudentsSerializer(serializers.ModelSerializer):
         model = Student
         fields = ['id','name','email','phone','department','department_name','student_id','address','gender','dob','admission_date']
 
-class TeachersSerializer(serializers.ModelSerializer):
-    department_name=serializers.ReadOnlyField(source='department.name',read_only=True)
-    class Meta:
-        model = Teacher
-        fields = ['id','name','teacher_id','designation','email','phone','address','department','department_name']
+
 
 
 

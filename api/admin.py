@@ -6,10 +6,7 @@ class StudentsAdmin(admin.ModelAdmin):
     list_display = ('name', 'student_id', 'email', 'phone', 'address', 'gender', 'dob', 'admission_date', 'department')
     search_fields = ('name', 'student_id', 'email', 'phone', 'address', 'gender', 'dob', 'admission_date', 'department')
 
-@admin.register(Teacher)
-class TeachersAdmin(admin.ModelAdmin):
-    list_display = ('name', 'teacher_id', 'designation', 'email', 'phone', 'address', 'department')
-    search_fields = ('name', 'teacher_id', 'designation', 'email', 'phone', 'address', 'department')
+
 
 
 @admin.register(Enrollment)
