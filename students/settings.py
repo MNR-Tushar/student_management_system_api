@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    'drf_yasg',
     'api',
     'users',
     'teachers',
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'results',
     'attendance',
     'departments',
+    'enrollments',
 ]
 
 MIDDLEWARE = [
