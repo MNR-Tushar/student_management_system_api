@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "auth-collection",
+		"name": "Authentication API",
+		"description": "Authentication endpoints for Student Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"testpass123\",\n    \"first_name\": \"Test\",\n    \"last_name\": \"User\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/users/register/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"testpass123\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/users/login/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"{{refresh_token}}\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/users/token/refresh/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "{{base_url}}/users/logout/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
