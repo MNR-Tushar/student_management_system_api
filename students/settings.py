@@ -1,20 +1,17 @@
 from datetime import timedelta
 from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
+from dotenv import load_dotenv
+ 
+load_dotenv()
+ 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p5(v6f4rnuw&jdi6-!v^bx^5og%k)sg&mh4f^%*^tly7s!ssqq'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ 
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fallback-key-change-in-production')
+ 
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ 
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
 
 # Application definition
@@ -30,7 +27,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    'drf_yasg',
+    'drf_spectacular',
     'api',
     'users',
     'teachers',
@@ -72,19 +69,47 @@ TEMPLATES = [
 WSGI_APPLICATION = 'students.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+# ─── PostgreSQL Database ───────────────────────────────────────────────────────
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE':   os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+        'NAME':     os.getenv('DB_NAME', 'student_db'),
+        'USER':     os.getenv('DB_USER', 'student_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'student123'),
+        'HOST':     os.getenv('DB_HOST', 'db'),
+        'PORT':     os.getenv('DB_PORT', '5432'),
     }
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+# ─── Redis Cache ───────────────────────────────────────────────────────────────
+CACHES = {
+    'default': {
+        'BACKEND':  'django_redis.cache.RedisCache',
+        'LOCATION': os.getenv('CACHE_LOCATION', 'redis://redis:6379/0'),
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+        'KEY_PREFIX': 'sms',          # student management system
+        'TIMEOUT': 60 * 15,           # 15 minutes default cache timeout
+    }
+}
+
+
+# Use Redis for Django sessions too
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
+
+
+# ─── Celery (Redis as broker) ──────────────────────────────────────────────────
+CELERY_BROKER_URL        = os.getenv('REDIS_URL', 'redis://redis:6379/1')
+CELERY_RESULT_BACKEND    = os.getenv('REDIS_URL', 'redis://redis:6379/1')
+CELERY_ACCEPT_CONTENT    = ['json']
+CELERY_TASK_SERIALIZER   = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE          = 'Asia/Dhaka'
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,28 +128,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 AUTH_USER_MODEL = 'users.CustomUser'
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
+ 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Asia/Dhaka'
 USE_I18N = True
-
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
+ 
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+ 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ 
 
 # REST Framework Configuration
 REST_FRAMEWORK = {
@@ -137,6 +151,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 
