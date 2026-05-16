@@ -83,14 +83,3 @@ class TeachersViewset(viewsets.GenericViewSet):
         cache.delete(TEACHER_DETAIL_KEY.format(pk=pk))
         cache.delete_pattern(f"{TEACHER_LIST_KEY}_*")
         return Response(status=204)
-
-    def retrieve(self, request, pk=None):
-        cache_key = TEACHER_DETAIL_KEY.format(pk=pk)
-        cached = cache.get(cache_key)
-        if cached:
-            return Response(cached)
-
-        teacher = self.get_object()
-        serializer = self.get_serializer(teacher)
-        cache.set(cache_key, serializer.data, CACHE_TTL)
-        return Response(serializer.data)

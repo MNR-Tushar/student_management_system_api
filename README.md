@@ -350,6 +350,51 @@ Loads 3 departments, 5 students, 4 teachers, 5 courses, and 50 enrollments.
 
 ---
 
+## CI/CD Pipeline
+
+This project uses **GitHub Actions** for automated testing and deployment.
+
+### Pipeline Overview
+
+| Job | Trigger | Description |
+|---|---|---|
+| `test` | Every push to `main` | Lint, migrate, and run tests |
+| `docker` | Push to `main` (after test passes) | Build and push Docker image to Docker Hub |
+
+### What Happens on `git push origin main`
+
+1. **Lint** — Checks for syntax errors using flake8
+2. **Migrate** — Runs migrations against a temporary test database
+3. **Test** — Runs `python manage.py test`
+4. **Migration check** — Ensures no migrations are missing
+5. **Docker build & push** — Builds and pushes the image to Docker Hub if all steps pass
+
+### Required GitHub Secrets
+
+Go to **Repository → Settings → Secrets and variables → Actions** and add the following:
+
+| Secret | Description |
+|---|---|
+| `SECRET_KEY` | Django secret key |
+| `DB_NAME` | PostgreSQL database name |
+| `DB_USER` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+| `DOCKERHUB_USERNAME` | Docker Hub username |
+| `DOCKERHUB_TOKEN` | Docker Hub access token |
+
+### Docker Image Tags
+
+Each successful push to `main` produces three tags:
+
+| Tag | Description |
+|---|---|
+| `latest` | Most recent build from `main` |
+| `main` | Branch name tag |
+| `sha-xxxxxxx` | Short commit SHA — useful for rollbacks |
+
+
+---
+
 ## JWT Token Lifetime
 
 | Token | Lifetime |
