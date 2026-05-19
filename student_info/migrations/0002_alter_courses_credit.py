@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0001_initial'),
+        ('student_info', '0001_initial'),
     ]
 
     operations = [
@@ -16,3 +16,4 @@ class Migration(migrations.Migration):
             field=models.DecimalField(decimal_places=2, max_digits=6),
         ),
     ]
+

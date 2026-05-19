@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'drf_spectacular',
-    'api',
+    'student_info',
     'users',
     'teachers',
     'courses',

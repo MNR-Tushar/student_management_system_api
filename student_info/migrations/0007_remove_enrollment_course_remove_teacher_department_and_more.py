@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0006_teacher_updated_at'),
+        ('student_info', '0006_teacher_updated_at'),
         ('departments', '0001_initial'),
     ]
 
@@ -42,3 +42,4 @@ class Migration(migrations.Migration):
             name='Enrollment',
         ),
     ]
+

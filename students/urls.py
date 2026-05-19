@@ -11,7 +11,7 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
+    path('student_info/', include('student_info.urls')),
     path('users/', include('users.urls')),
     path('departments/', include('departments.urls')),
     path('courses/', include('courses.urls')),
@@ -33,3 +33,4 @@ urlpatterns = [
   
     
 ]
+

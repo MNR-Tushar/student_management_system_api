@@ -1,6 +1,6 @@
 [
   {
-    "model": "api.department",
+    "model": "student_info.department",
     "pk": 1,
     "fields": {
       "name": "Computer Science & Engineering",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "api.department",
+    "model": "student_info.department",
     "pk": 2,
     "fields": {
       "name": "Electrical & Electronic Engineering",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "api.department",
+    "model": "student_info.department",
     "pk": 3,
     "fields": {
       "name": "Business Administration",
@@ -28,7 +28,7 @@
   },
 
   {
-    "model": "api.student",
+    "model": "student_info.student",
     "pk": 1,
     "fields": {
       "name": "Md Rahim",
@@ -43,7 +43,7 @@
     }
   },
   {
-    "model": "api.student",
+    "model": "student_info.student",
     "pk": 2,
     "fields": {
       "name": "Fatema Akter",
@@ -58,7 +58,7 @@
     }
   },
   {
-    "model": "api.student",
+    "model": "student_info.student",
     "pk": 3,
     "fields": {
       "name": "Sajjad Hossain",
@@ -73,7 +73,7 @@
     }
   },
   {
-    "model": "api.student",
+    "model": "student_info.student",
     "pk": 4,
     "fields": {
       "name": "Nusrat Jahan",
@@ -88,7 +88,7 @@
     }
   },
   {
-    "model": "api.student",
+    "model": "student_info.student",
     "pk": 5,
     "fields": {
       "name": "Tanvir Hasan",
@@ -104,7 +104,7 @@
   },
 
   {
-    "model": "api.teacher",
+    "model": "student_info.teacher",
     "pk": 1,
     "fields": {
       "name": "Dr. Ahsan Habib",
@@ -117,7 +117,7 @@
     }
   },
   {
-    "model": "api.teacher",
+    "model": "student_info.teacher",
     "pk": 2,
     "fields": {
       "name": "Dr. Nasima Khatun",
@@ -130,7 +130,7 @@
     }
   },
   {
-    "model": "api.teacher",
+    "model": "student_info.teacher",
     "pk": 3,
     "fields": {
       "name": "Mahmudul Hassan",
@@ -143,7 +143,7 @@
     }
   },
   {
-    "model": "api.teacher",
+    "model": "student_info.teacher",
     "pk": 4,
     "fields": {
       "name": "Rumana Islam",
@@ -157,7 +157,7 @@
   },
 
   {
-    "model": "api.course",
+    "model": "student_info.course",
     "pk": 1,
     "fields": {
       "title": "Introduction to Programming",
@@ -168,7 +168,7 @@
     }
   },
   {
-    "model": "api.course",
+    "model": "student_info.course",
     "pk": 2,
     "fields": {
       "title": "Data Structures",
@@ -179,7 +179,7 @@
     }
   },
   {
-    "model": "api.course",
+    "model": "student_info.course",
     "pk": 3,
     "fields": {
       "title": "Electrical Circuits",
@@ -190,7 +190,7 @@
     }
   },
   {
-    "model": "api.course",
+    "model": "student_info.course",
     "pk": 4,
     "fields": {
       "title": "Marketing Basics",
@@ -201,7 +201,7 @@
     }
   },
   {
-    "model": "api.course",
+    "model": "student_info.course",
     "pk": 5,
     "fields": {
       "title": "Database Management",
@@ -213,7 +213,7 @@
   },
 
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 1,
     "fields": {
       "student": 1,
@@ -222,7 +222,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 2,
     "fields": {
       "student": 2,
@@ -231,7 +231,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 3,
     "fields": {
       "student": 3,
@@ -240,7 +240,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 4,
     "fields": {
       "student": 4,
@@ -249,7 +249,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 5,
     "fields": {
       "student": 5,
@@ -259,7 +259,7 @@
   },
   
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 1,
     "fields": {
       "student": 1,
@@ -268,7 +268,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 2,
     "fields": {
       "student": 2,
@@ -277,7 +277,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 3,
     "fields": {
       "student": 3,
@@ -286,7 +286,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 4,
     "fields": {
       "student": 4,
@@ -295,7 +295,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 5,
     "fields": {
       "student": 5,
@@ -304,7 +304,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 6,
     "fields": {
       "student": 1,
@@ -313,7 +313,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 7,
     "fields": {
       "student": 3,
@@ -322,7 +322,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 8,
     "fields": {
       "student": 5,
@@ -331,7 +331,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 9,
     "fields": {
       "student": 2,
@@ -340,7 +340,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 10,
     "fields": {
       "student": 4,
@@ -349,7 +349,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 11,
     "fields": {
       "student": 1,
@@ -358,7 +358,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 12,
     "fields": {
       "student": 3,
@@ -367,7 +367,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 13,
     "fields": {
       "student": 5,
@@ -376,7 +376,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 14,
     "fields": {
       "student": 2,
@@ -385,7 +385,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 15,
     "fields": {
       "student": 4,
@@ -394,7 +394,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 16,
     "fields": {
       "student": 1,
@@ -403,7 +403,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 17,
     "fields": {
       "student": 3,
@@ -412,7 +412,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 18,
     "fields": {
       "student": 5,
@@ -421,7 +421,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 19,
     "fields": {
       "student": 2,
@@ -430,7 +430,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 20,
     "fields": {
       "student": 4,
@@ -439,7 +439,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 21,
     "fields": {
       "student": 1,
@@ -448,7 +448,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 22,
     "fields": {
       "student": 2,
@@ -457,7 +457,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 23,
     "fields": {
       "student": 3,
@@ -466,7 +466,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 24,
     "fields": {
       "student": 4,
@@ -475,7 +475,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 25,
     "fields": {
       "student": 5,
@@ -484,7 +484,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 26,
     "fields": {
       "student": 1,
@@ -493,7 +493,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 27,
     "fields": {
       "student": 2,
@@ -502,7 +502,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 28,
     "fields": {
       "student": 3,
@@ -511,7 +511,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 29,
     "fields": {
       "student": 4,
@@ -520,7 +520,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 30,
     "fields": {
       "student": 5,
@@ -529,7 +529,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 31,
     "fields": {
       "student": 1,
@@ -538,7 +538,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 32,
     "fields": {
       "student": 2,
@@ -547,7 +547,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 33,
     "fields": {
       "student": 3,
@@ -556,7 +556,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 34,
     "fields": {
       "student": 4,
@@ -565,7 +565,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 35,
     "fields": {
       "student": 5,
@@ -574,7 +574,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 36,
     "fields": {
       "student": 1,
@@ -583,7 +583,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 37,
     "fields": {
       "student": 2,
@@ -592,7 +592,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 38,
     "fields": {
       "student": 3,
@@ -601,7 +601,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 39,
     "fields": {
       "student": 4,
@@ -610,7 +610,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 40,
     "fields": {
       "student": 5,
@@ -619,7 +619,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 41,
     "fields": {
       "student": 1,
@@ -628,7 +628,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 42,
     "fields": {
       "student": 2,
@@ -637,7 +637,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 43,
     "fields": {
       "student": 3,
@@ -646,7 +646,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 44,
     "fields": {
       "student": 4,
@@ -655,7 +655,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 45,
     "fields": {
       "student": 5,
@@ -664,7 +664,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 46,
     "fields": {
       "student": 1,
@@ -673,7 +673,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 47,
     "fields": {
       "student": 2,
@@ -682,7 +682,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 48,
     "fields": {
       "student": 3,
@@ -691,7 +691,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 49,
     "fields": {
       "student": 4,
@@ -700,7 +700,7 @@
     }
   },
   {
-    "model": "api.enrollment",
+    "model": "student_info.enrollment",
     "pk": 50,
     "fields": {
       "student": 5,
@@ -710,3 +710,4 @@
   }
 
 ]
+

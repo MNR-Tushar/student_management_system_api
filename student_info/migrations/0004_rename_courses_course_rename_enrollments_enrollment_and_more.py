@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0003_rename_course_id_enrollments_course_and_more'),
+        ('student_info', '0003_rename_course_id_enrollments_course_and_more'),
     ]
 
     operations = [
@@ -27,3 +27,4 @@ class Migration(migrations.Migration):
             new_name='Teacher',
         ),
     ]
+

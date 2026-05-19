@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
 from courses.serializers import CoursesSerializer
-from api.serializers import StudentsSerializer
+from student_info.serializers import StudentsSerializer
 class EnrollmentsSerializer(serializers.ModelSerializer):
     student_name=serializers.CharField(write_only=True,required=False)
     course_name=serializers.CharField(write_only=True,required=False)

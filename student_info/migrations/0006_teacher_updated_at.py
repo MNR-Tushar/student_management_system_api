@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0005_remove_teacher_updated_at_alter_course_created_at_and_more'),
+        ('student_info', '0005_remove_teacher_updated_at_alter_course_created_at_and_more'),
     ]
 
     operations = [
@@ -16,3 +16,4 @@ class Migration(migrations.Migration):
             field=models.DateTimeField(auto_now=True, null=True),
         ),
     ]
+

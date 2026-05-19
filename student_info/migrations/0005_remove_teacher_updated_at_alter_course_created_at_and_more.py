@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0004_rename_courses_course_rename_enrollments_enrollment_and_more'),
+        ('student_info', '0004_rename_courses_course_rename_enrollments_enrollment_and_more'),
     ]
 
     operations = [
@@ -50,3 +50,4 @@ class Migration(migrations.Migration):
             field=models.DateTimeField(auto_now_add=True, null=True),
         ),
     ]
+

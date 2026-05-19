@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0002_alter_courses_credit'),
+        ('student_info', '0002_alter_courses_credit'),
     ]
 
     operations = [
@@ -21,3 +21,4 @@ class Migration(migrations.Migration):
             new_name='student',
         ),
     ]
+
