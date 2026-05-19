@@ -154,6 +154,24 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Student Management System API',
+    'DESCRIPTION': (
+        'A complete REST API for managing academic operations in a student management system.\n\n'
+        'This API provides secure JWT-based authentication and role-friendly endpoints for managing:\n'
+        '- User registration, login, logout, and token refresh\n'
+        '- Student profiles and student records\n'
+        '- Teacher profiles and teacher records\n'
+        '- Departments and academic structures\n'
+        '- Courses and course-related details\n'
+        '- Enrollments connecting students to courses\n\n'
+        'Common capabilities include pagination, filtering, search, and ordering on list endpoints.\n'
+        'Use the Authorize button in Swagger with a Bearer token to test protected endpoints.'
+    ),
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 
 # JWT Configuration (Fixed - Using standard tokens, not sliding)
 SIMPLE_JWT = {
